@@ -1,3 +1,4 @@
+require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
@@ -50,6 +51,16 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-cloudinary`,
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`,
+        prefix: `Trips/` 
+      }
+    },
     `gatsby-plugin-sharp`,
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
