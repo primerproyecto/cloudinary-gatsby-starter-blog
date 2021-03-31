@@ -1,5 +1,6 @@
 require('dotenv').config();
 module.exports = {
+  pathPrefix: "/cloudinary-gatsby-starter-blog",
   siteMetadata: {
     title: `Gatsby Starter Blog`,
     author: {
@@ -54,7 +55,7 @@ module.exports = {
     {
       resolve: `gatsby-source-cloudinary`,
       options: {
-        cloudName: 'dikfqzzyb',
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
         apiKey: process.env.CLOUDINARY_API_KEY,
         apiSecret: process.env.CLOUDINARY_API_SECRET,
         resourceType: `image`,
